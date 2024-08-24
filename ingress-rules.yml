@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: ingress-resource-2
+spec:
+ ingressClassName: nginx
+ rules:
+ - host: rajkumartech.org           #change based on requirement
+   http:
+     paths:
+     - pathType: Prefix
+       path: "/java-web-app"       # change based on requirement
+       backend:
+        service:
+         name: javawebsvc         # change based on requirement
+         port:
+          number: 80
+     - pathType: Prefix
+       path: "/maven-web-app"    # change based on requirement
+       backend:
+        service:
+         name: mavenwebappsvc     # change based on requirement
+         port:
+          number: 80
+~
+~
+~
